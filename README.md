@@ -10,4 +10,5 @@ Im zweiten Praktikum haben wir die ToDo-Objekte in einer MongoDB-Datenbank gespe
 - [x] [Projekt initialisieren](backend/exercise0.md)
 - [x] [REST-Schnittstelle erstellen](backend/exercise1.md)
 - [x] [ToDos in Datenbank persistieren](backend/exercise2.md)
-- [ ] [Benutzerverwaltung konfigurieren](backend/exercise3.md)
+- [ ] [Frontend an Backend anbinden](backend/exercise3.md)
+- [ ] [Benutzerverwaltung konfigurieren](backend/exercise4.md)

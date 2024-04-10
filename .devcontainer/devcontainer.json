@@ -15,7 +15,11 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"mongodb.mongodb-vscode"
+				"mongodb.mongodb-vscode",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"streetsidesoftware.code-spell-checker",
+				"streetsidesoftware.code-spell-checker-german"
 			]
 		}
 	},
