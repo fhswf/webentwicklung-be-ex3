@@ -42,92 +42,135 @@ curl --location --request POST 'https://keycloak.gawron.cloud/realms/webentwickl
 Der zugehörige Public Key, mit dem die JWTs signiert sind, lautet 
 ```
 -----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyn2vP592Ju/iKXQW1DCrSTXyQXyo11Qed1SdzFWC+mRtdgioKibzYMBt2MfAJa6YoyrVNgOtGvK659MjHALtotPQGmis1VVvBeMFdfh+zyFJi8NPqgBTXz6bQfnu85dbxVAg95J+1Ud0m4IUXME1ElOyp1pi88+w0C6ErVcFCyEDS3uAajBY6vBIuPrlokbl6RDcvR9zX85s+R/s7JeP1XV/e8gbnYgZwxcn/6+7moHPDl4LqvVDKnDq9n4W6561s8zzw8EoAwwYXUC3ZPe2/3DcUCh+zTF2nOy8HiN808CzqLq1VeD13q9DgkAmBWFNSaXb6vK6RIQ9+zr2cwdXiwIDAQAB
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3lj+kx6JNoTrFnAIs0S9iW6IsXWWdT5jabhNUc6puI1n63xjoJj8bYXhcv40ck6V6/5Vovaa/F+N8ZNpPbaaJTX8V6JSJc3zGEP7JRdOqskOeUTWiOABxEQOxp04l0QEef8aJY1vLhnqTxZabPKaVxws1+GuiieznvFNv1YsCogRuA1b5+s9bNjNUotnHd6JEMNt2O/2maDRoivRA2dxCuLT8HBE/aGBWoMrfhyj5EXvD4Pv46CJ2NUVByGps5DH2LGfu+P0VLyINfBpaaqLYha5+up1zkJ7tGm83hEzazkjvBAJ3/zoGHX7hWlTARwtrjdUAcgRRcLNaBQm4xZi6wIDAQAB
 -----END PUBLIC KEY-----
 ```
 
 Hier die (leicht gekürzte) Konfiguration der Realm, die Sie unter 
-[https://jupiter.fh-swf.de/keycloak/realms/webentwicklung/.well-known/openid-configuration](https://jupiter.fh-swf.de/keycloak/realms/webentwicklung/.well-known/openid-configuration) abrufen können:
+[https://keycloak.gawron.cloud/realms/webentwicklung/.well-known/openid-configuration](https://keycloak.gawron.cloud/realms/webentwicklung/.well-known/openid-configuration) abrufen können:
 
 ```JSON
 {
-    "issuer": "https://jupiter.fh-swf.de/keycloak/realms/webentwicklung",
-    "authorization_endpoint": "https://jupiter.fh-swf.de/keycloak/realms/webentwicklung/protocol/openid-connect/auth",
-    "token_endpoint": "https://jupiter.fh-swf.de/keycloak/realms/webentwicklung/protocol/openid-connect/token",
-    "introspection_endpoint": "https://jupiter.fh-swf.de/keycloak/realms/webentwicklung/protocol/openid-connect/token/introspect",
-    "userinfo_endpoint": "https://jupiter.fh-swf.de/keycloak/realms/webentwicklung/protocol/openid-connect/userinfo",
-    "end_session_endpoint": "https://jupiter.fh-swf.de/keycloak/realms/webentwicklung/protocol/openid-connect/logout",
-    "grant_types_supported": [
-        "authorization_code",
-        "implicit",
-        "refresh_token",
-        "password",
-        "client_credentials",
-        "urn:ietf:params:oauth:grant-type:device_code",
-        "urn:openid:params:grant-type:ciba"
-    ],
-    "response_types_supported": [
-        "code",
-        "none",
-        "id_token",
-        "token",
-        "id_token token",
-        "code id_token",
-        "code token",
-        "code id_token token"
-    ],
-
-    "response_modes_supported": [
-        "query",
-        "fragment",
-        "form_post",
-        "query.jwt",
-        "fragment.jwt",
-        "form_post.jwt",
-        "jwt"
-    ],
-    "token_endpoint_auth_methods_supported": [
-        "private_key_jwt",
-        "client_secret_basic",
-        "client_secret_post",
-        "tls_client_auth",
-        "client_secret_jwt"
-    ],
-    "introspection_endpoint_auth_methods_supported": [
-        "private_key_jwt",
-        "client_secret_basic",
-        "client_secret_post",
-        "tls_client_auth",
-        "client_secret_jwt"
-    ],
-    "claims_supported": [
-        "aud",
-        "sub",
-        "iss",
-        "auth_time",
-        "name",
-        "given_name",
-        "family_name",
-        "preferred_username",
-        "email",
-        "acr"
-    ],
-    "claim_types_supported": [
-        "normal"
-    ],
-    "claims_parameter_supported": true,
-    "scopes_supported": [
-        "openid",
-        "offline_access",
-        "web-origins",
-        "microprofile-jwt",
-        "email",
-        "profile",
-        "address",
-        "phone",
-        "roles",
-        "acr"
-    ],
+  "issuer": "https://keycloak.gawron.cloud/realms/webentwicklung",
+  "authorization_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/auth",
+  "token_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/token",
+  "introspection_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/token/introspect",
+  "userinfo_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/userinfo",
+  "end_session_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/logout",
+  "frontchannel_logout_session_supported": true,
+  "frontchannel_logout_supported": true,
+  "jwks_uri": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/certs",
+  "check_session_iframe": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/login-status-iframe.html",
+  "grant_types_supported": [
+    "authorization_code",
+    "client_credentials",
+    "implicit",
+    "password",
+    "refresh_token",
+    "urn:ietf:params:oauth:grant-type:device_code",
+    "urn:ietf:params:oauth:grant-type:token-exchange",
+    "urn:ietf:params:oauth:grant-type:uma-ticket",
+    "urn:openid:params:grant-type:ciba"
+  ],
+  "acr_values_supported": [
+    "0",
+    "1"
+  ],
+  "response_types_supported": [
+    "code",
+    "none",
+    "id_token",
+    "token",
+    "id_token token",
+    "code id_token",
+    "code token",
+    "code id_token token"
+  ],
+  "subject_types_supported": [
+    "public",
+    "pairwise"
+  ],
+  "prompt_values_supported": [
+    "none",
+    "login",
+    "consent"
+  ],
+  "registration_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/clients-registrations/openid-connect",
+  "token_endpoint_auth_methods_supported": [
+    "private_key_jwt",
+    "client_secret_basic",
+    "client_secret_post",
+    "tls_client_auth",
+    "client_secret_jwt"
+  ],
+  "claims_supported": [
+    "aud",
+    "sub",
+    "iss",
+    "auth_time",
+    "name",
+    "given_name",
+    "family_name",
+    "preferred_username",
+    "email",
+    "acr"
+  ],
+  "claim_types_supported": [
+    "normal"
+  ],
+  "claims_parameter_supported": true,
+  "scopes_supported": [
+    "openid",
+    "email",
+    "offline_access",
+    "basic",
+    "organization",
+    "address",
+    "service_account",
+    "microprofile-jwt",
+    "roles",
+    "phone",
+    "web-origins",
+    "profile",
+    "acr"
+  ],
+  "request_parameter_supported": true,
+  "request_uri_parameter_supported": true,
+  "require_request_uri_registration": true,
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "tls_client_certificate_bound_access_tokens": true,
+  "revocation_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/revoke",
+  "revocation_endpoint_auth_methods_supported": [
+    "private_key_jwt",
+    "client_secret_basic",
+    "client_secret_post",
+    "tls_client_auth",
+    "client_secret_jwt"
+  ],
+  "backchannel_logout_supported": true,
+  "backchannel_logout_session_supported": true,
+  "device_authorization_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/auth/device",
+  "backchannel_token_delivery_modes_supported": [
+    "poll",
+    "ping"
+  ],
+  "backchannel_authentication_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/ext/ciba/auth",
+  "require_pushed_authorization_requests": false,
+  "pushed_authorization_request_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/ext/par/request",
+  "mtls_endpoint_aliases": {
+    "token_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/token",
+    "revocation_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/revoke",
+    "introspection_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/token/introspect",
+    "device_authorization_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/auth/device",
+    "registration_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/clients-registrations/openid-connect",
+    "userinfo_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/userinfo",
+    "pushed_authorization_request_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/ext/par/request",
+    "backchannel_authentication_endpoint": "https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/ext/ciba/auth"
+  },
+  "authorization_response_iss_parameter_supported": true
 }
 ```
 
