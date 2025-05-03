@@ -15,12 +15,21 @@ sequenceDiagram
     participant Frontend
     participant Auth-Server
     participant Backend
+    Frontend->>Backend: DELETE /todos/4711
+    Note right of Backend: Authorization<br>check fails
+    Backend-->>Frontend: status 401, redirect to authorization end point 
     Frontend->>Auth-Server: /auth
-    Auth-Server->>Frontend: redirect to login page
+    Auth-Server-->>Frontend: redirect to login page
     Note right of Auth-Server: Follow Openid Connect<br>flow
     Frontend->>Auth-Server: Send username & password
-    Auth-Server->>Frontend: Return access token
+    Auth-Server-->>Frontend: Redirect with code
+    Frontend->>Backend: /oauth_callback
 
+    Backend->>Auth-Server: /token
+    Auth-Server-->>Backend: JWT
+    Note right of Backend: Backend exchanges code for token
+
+    Backend-->>Frontend: set JWT as Cookie
     Frontend->>Backend: DELETE /todos/4711
     Note right of Backend: Authorization via <br>JSON Web Token
 ```
