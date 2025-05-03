@@ -244,4 +244,13 @@ Dazu müssen Sie auch die REST-Schnittstelle so erweitern, dass ein Login mögli
    An diese Route wird der Client vom Keycloak-Server weitergeleitet, um das Frontend mit einem JWT zu versorgen.
    Im Anschluss sollte ein Cookie gesetzt werden, das den JWT enthält, und der Benutzer auf die Startseite weitergeleitet werden.
 
+  > **WICHTIG:** Beim Aufruf des Token-Endpunkts `https://keycloak.gawron.cloud/realms/webentwicklung/protocol/openid-connect/token` muss auch die ursprüngliche `redirect_uri`
+  > angegeben werden (Warum sieht das Protokoll das wohl vor?)!
+  > 
+  > Diese können Sie in einem Codespace wie folgt ermitteln:
+  > ```
+  > const HOST = `${process.env.CODESPACE_NAME}-${PORT}.app.github.dev`
+  > const REDIRECT_URI = `https://${HOST}/oauth_callback`
+  > ```
+
 
