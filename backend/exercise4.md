@@ -8,7 +8,7 @@ wird ein *Session-Cookie* gesetzt und der Server merkt sich, zu welchem Benutzer
 Dieses Vorgehen hat Nachteile, wenn die Anwendung aus mehreren *Micro Services* besteht oder wenn man das Backend skalieren möchte.
 
 Eine Alternative ist die Autorisierung einzelner Zugriffe über *JSON Web Token*. Mit so einem – von einem Authentication Server ausgestellten – Token weißt sich das 
-Frontend gegenüber dem Backend aus.   
+Frontend gegenüber dem Backend aus.  
 
 ```mermaid
 sequenceDiagram
