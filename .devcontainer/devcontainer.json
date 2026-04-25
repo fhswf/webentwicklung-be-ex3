@@ -17,18 +17,18 @@
 			"extensions": [
 				"mongodb.mongodb-vscode",
 				"GitHub.copilot",
-				"GitHub.copilot-chat",
-				"streetsidesoftware.code-spell-checker",
-				"streetsidesoftware.code-spell-checker-german"
+				"GitHub.copilot-chat"
 			]
 		}
 	},
 	"features": {
-	//	"ghcr.io/devcontainers-contrib/features/jshint:2": {}
-	},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "24"
+		}
+	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [3000, 27017],
+	// "forwardPorts": [3000, 27017],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
@@ -36,3 +36,4 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
+
