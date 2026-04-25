@@ -15,13 +15,6 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "mongodb": "^5.1.0"
-  },
-  "cspell": {
-    "enabled": true,
-    "language": "de",
-    "ignorePaths": [
-      "node_modules"
-    ]
+    "mongodb": "^6.5.0"
   }
 }

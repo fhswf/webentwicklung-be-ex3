@@ -7,6 +7,7 @@ let db = null;
 let collection = null;
 export default class DB {
     connect() {
+        console.log('Connecting to MongoDB', MONGO_URI);
         return MongoClient.connect(MONGO_URI)
             .then(function (client) {
                 db = client.db(MONGO_DB);
